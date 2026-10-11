@@ -21,6 +21,7 @@ Aplikasi Frontend Sistem Manajemen Armada (Fleet Management) modern berbasis **R
      - Pilihan jumlah data per halaman (dropdown: 6, 9, 12, 18, 24)
      - Jumlah halaman yang tersedia (*Halaman X dari Y*)
      - Tombol navigasi (Awal `<<`, Sebelumnya `<`, Nomor halaman dengan ellipsis `...`, Berikutnya `>`, Akhir `>>`)
+        - > **Catatan Pencarian Armada (Search Box):** Pencarian teks label/ID armada dijalankan secara **lokal (client-side)** pada data yang sedang dimuat. Hal ini dikarenakan MBTA REST API tidak memiliki parameter pencarian teks bebas (*fuzzy / partial text search* seperti `?search=` atau `?q=`).
 
 3. **Filter Dropdown Rute & Trip dengan Infinite Scroll**:
    - Filter multiselect untuk Rute dan Trip.
@@ -28,7 +29,6 @@ Aplikasi Frontend Sistem Manajemen Armada (Fleet Management) modern berbasis **R
    - Fitur pencarian instan di dalam dropdown.
    - Dependensi cerdas: Pilihan rute secara otomatis mempersempit daftar trip yang tersedia.
    - Tag filter aktif dengan tombol hapus cepat per item dan tombol reset semua filter.
-   - > **Catatan Pencarian Armada (Search Box):** Pencarian teks label/ID armada dijalankan secara **lokal (client-side)** pada data yang sedang dimuat. Hal ini dikarenakan MBTA REST API tidak memiliki parameter pencarian teks bebas (*fuzzy / partial text search* seperti `?search=` atau `?q=`), melainkan hanya mendukung *exact match* (`filter[label]` dan `filter[id]`), di mana `filter[id]` juga memiliki batasan API tidak dapat digabungkan dengan filter lainnya (*"Cannot be combined with any other filter"*).
 
 4. **Detail Kendaraan (Popup Modal)**:
    - Menampilkan detail lengkap armada:
