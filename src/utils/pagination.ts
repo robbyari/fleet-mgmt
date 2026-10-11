@@ -19,24 +19,6 @@ export function extractOffsetFromUrl(url?: string | null): number | null {
 }
 
 /**
- * Extracts limit parameter from MBTA API URL
- */
-export function extractLimitFromUrl(url?: string | null): number | null {
-  if (!url) return null
-  try {
-    const match = url.match(/page(?:%5B|\[)limit(?:%5D|\])=(\d+)/)
-    if (match && match[1]) {
-      return parseInt(match[1], 10)
-    }
-    const parsed = new URL(url)
-    const limitStr = parsed.searchParams.get('page[limit]')
-    return limitStr ? parseInt(limitStr, 10) : null
-  } catch {
-    return null
-  }
-}
-
-/**
  * Compute total count and pages from links and current response
  */
 export function calculatePaginationMeta(
